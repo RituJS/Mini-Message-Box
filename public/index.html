@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Message Board</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            
+            <div class="main">
+                <form action="/success" method="POST">
+                    <h2>Mini Message Box</h2>
+                    <label>Name : </label>
+                    <input type="text" class="box" id="name" name="name" placeholder="Name" required />
+                    <br>
+                   
+                    <div class="text_area">
+                        <label for="comment" class="msg">Message :</label>
+                        <textarea class="form-control" rows="2" id="text" name="text" required placeholder="write a message..."></textarea>
+                      </div>
+                      <br>
+                    <input type="submit" value="Send" id="submit" />
+                </form>
+            </div>
+        </div>
+        <div class="display">
+            <table>
+                <thead>
+                    <th>Name</th>                  
+                    <th>Status</th>                    
+                </thead>
+
+                <tbody id="list">
+                   
+                </tbody>
+    
+            </table>
+        </div>
+    </div>
+    <script>
+     fetch(`http://localhost:3000/text`).then(res=>{return res.json()}).then(data=>display(data));
+     function display(data) 
+     {
+        document.getElementById("list").innerHTML="";
+        for(let i=0;i<data.length;i++)
+        {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td> ${data[i].name} </td> 
+                             <td> ${data[i].text} </td>`;    
+            document.getElementById("list").appendChild(row);
+        }
+     }     
+    </script>
+</body>
+</html>

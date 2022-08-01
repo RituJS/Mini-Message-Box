@@ -1,0 +1,67 @@
+.container
+{
+    position: relative;
+    left:30%;
+}
+.main {
+    padding: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 500px;
+    background: #eac39b;
+}
+.text_area
+{
+    width: 100%;
+}
+.msg
+{
+    position:absolute;
+    top:45%;
+}
+.form-control
+{
+    margin-left:14%;
+    outline: none;
+}
+.display{
+width:540px;
+background-color: #f4b058;
+margin-top:1%;
+}
+
+.main h1 {
+    font-size: 41px;
+    text-align: center;
+    font-family: 'Helvetica', serif;
+}
+
+input {
+    font-family: 'Helvetica', serif;
+    width: auto;
+    font-size: 20px;
+    padding: 12px 20px;
+    margin: 16px 0;
+    border: none;
+    border-bottom: 2px solid #f6efef;
+}
+
+input[type=submit] {
+    width: auto;
+    background-color: #efe6de;
+    border: none;
+    color: black;
+    padding: 12px 20px;
+    margin: 4px 2px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.box {
+    margin-left: 4%;
+    outline: none;
+    width:130px;
+    height:10px;
+    border-radius: 1px;;
+
+}
+
